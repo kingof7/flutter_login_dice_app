@@ -13,7 +13,12 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class LogIn extends StatelessWidget {
+class LogIn extends StatefulWidget {
+  @override
+  State<LogIn> createState() => _LogInState();
+}
+
+class _LogInState extends State<LogIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,18 +26,26 @@ class LogIn extends StatelessWidget {
         title: Text('Log in'),
         backgroundColor: Colors.redAccent,
         centerTitle: true,
-        leading: IconButton(
-            icon: Icon(Icons.menu),
-            onPressed: (){}
-        ),
+        leading: IconButton(icon: Icon(Icons.menu), onPressed: () {}),
         actions: <Widget>[
-          IconButton(
-              icon: Icon(Icons.search),
-              onPressed: (){}
-          )
+          IconButton(icon: Icon(Icons.search), onPressed: () {})
+        ],
+      ),
+      body: Column(
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(
+              top: 50,
+            ),
+          ),
+          Center(
+            child: Image(
+                image: AssetImage('image/chef.gif'),
+                width: 170.0,
+                height: 190.0),
+          ),
         ],
       ),
     );
   }
 }
-
